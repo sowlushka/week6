@@ -1,0 +1,54 @@
+/*Шрифты*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;&display=swap');
+
+/*.desktop * {
+    border: 1px blue solid;
+}*/
+
+.desktop {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr [body-start] minmax(1fr, 320px) minmax(2.5fr, 800px) minmax(1fr, 320px) [body-end] 1fr;
+    background-image: url(../resources/background.png);
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+
+    justify-content: center;
+    align-content: start;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.mirror {
+    display: inline-block;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transform-origin: (-100%, 0%);
+    padding: 0px 0px 0px 0px;
+}
+
+header {
+    grid-area: body-start/body-end;
+    color: #FFFFFF;
+    padding-top: 60px;
+
+}
+
+
+.logo {
+    border: 1px solid blue;
+    width: 176px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    /*text-align: justify;*/
+}
+
+.slogan {
+    font-weight: 700;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    line-height: 5ex;
+}
