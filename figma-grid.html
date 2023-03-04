@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/figma-grid.css">
+
     <title>EXPLOЯER</title>
 </head>
 
@@ -35,8 +36,8 @@
                 <a href="#ABOUT" class="link-extra-margin">ABOUT US</a>
                 <a href="#CONTACT">CONTACT US</a>
             </nav>
-            <article>
 
+            <article id="art1">
                 <img src="./resources/art-img1.png" alt="article1">
                 <a href="#travel" class="btn">TRAVEL</a>
                 <div class="surn">
@@ -56,7 +57,8 @@
                 </div>
 
                 <div class="text paper">
-                    Vestibulum ut placerat nisl. Cras sed purus tellus. Pellentesque habitant morbi tristique senectus
+                    Vestibulum ut placerat nisl. Cras sed purus tellus. Pellentesque habitant morbi tristique
+                    senectus
                     et
                     netus et malesuada fames ac turpis egestas. Duis posuere nisi sit amet neque finibus vestibulum.
                     Vivamus
@@ -133,12 +135,30 @@
             <div class="h-part2">
                 Featured Stories
             </div>
-            <div>
-                pict
+            <div class="slogan-part2">
+                Did you read our personal favorites?
+            </div>
+            <div id="pre-art1" class="pre-art">
+
             </div>
         </div>
     </div>
 
+    <script>
+
+        let el1 = document.querySelector('#art1').firstElementChild;
+        /*let text = parent.firstElementChild.innerHTML;*/
+        let el2 = el1.outerHTML;
+        for (i = 0; i < 3; ++i) {
+            el1 = el1.nextElementSibling;
+            el2 += el1.outerHTML;
+        }
+
+        /*el2 = '<div class="js">' + el2 + '</div/>';*/
+        document.getElementById("pre-art1").innerHTML = el2;
+    </script>
+
 </body>
+
 
 </html>
