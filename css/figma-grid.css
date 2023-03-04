@@ -106,7 +106,7 @@ article {
     display: grid;
     grid-template-rows: [article-start] 160px [surname-start] 40px [headerline] 130px [article-content] 180px;
 
-    grid-template-columns: 7.5fr [art-cont1] 83fr [art-cont2] 9.5fr;
+    grid-template-columns: 7.5fr [art-cont1] 82fr [art-cont2] 9.5fr;
 
 }
 
@@ -157,15 +157,65 @@ article .paper {
     padding-bottom: 35px;
 }
 
-article .describe {
+article .text {
     grid-row: article-content/-1;
     grid-column: art-cont1/art-cont2;
     height: 100px;
     padding: 36px 0px 0px 0px;
 }
 
-.describe a {
+article a {
     display: block;
+    padding-top: 2px;
     font-size: 17px;
     line-height: 30px;
+}
+
+article .btn {
+    display: block;
+
+    grid-column: -2;
+    grid-row: article-start;
+    /*width: 40px;*/
+    height: 25px;
+    padding: 0px 10px;
+    margin: 20px 20px 0px 0px;
+    text-decoration: none;
+    font-size: 8px;
+    line-height: 24px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+
+a.btn:visited {
+    color: rgb(83, 83, 10);
+}
+
+.readmore {
+    grid-column: content-start/content-end;
+    height: 211px;
+    background-color: #F1F1F1;
+    color: #333333;
+    justify-self: normal;
+    text-align: center;
+    padding-top: 49px;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.readmore a {
+    display: block;
+    margin: 21px auto 0px auto;
+    max-width: 22.75%;
+    height: 45px;
+    text-decoration: none;
+    background-color: #8D4FDB;
+    color: #FFFFFF;
+    font-size: 10px;
+    line-height: 30px;
+
 }
