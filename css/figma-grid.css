@@ -1,5 +1,5 @@
 /*Шрифты*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;700&display=swap');
 
 /*.desktop * {
     border: 1px blue solid;
@@ -7,15 +7,25 @@
 
 .desktop {
     display: grid;
+    max-width: 1400px;
+    margin: auto;
     min-height: 100vh;
-    grid-template-columns: 1fr [body-start] minmax(1fr, 320px) minmax(2.5fr, 800px) minmax(1fr, 320px) [body-end] 1fr;
+
+    grid-template-columns: [body-start] 320px [content-start] 800px [content-end] 320px [body-end];
+
+    grid-template-rows: [head-start] 100px [nav-start] 140px[main-start] 1fr [main-end];
+    grid-auto-flow: row;
+
     background-image: url(../resources/background.png);
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
 
-    justify-content: center;
-    align-content: start;
+    justify-content: stretch;
+    justify-items: center;
+
+
     font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
 
 }
 
@@ -26,17 +36,18 @@
     padding: 0px 0px 0px 0px;
 }
 
-header {
-    grid-area: body-start/body-end;
-    color: #FFFFFF;
-    padding-top: 60px;
 
+
+header {
+    /*border: 1px solid blue;*/
+    grid-column: content-start/content-end;
+    /*grid-row: head-start/head-end;*/
+    align-self: end;
 }
 
 
 .logo {
-    border: 1px solid blue;
-    width: 176px;
+    /* border: 1px solid blue;*/
     height: 40px;
     font-weight: 700;
     font-size: 30px;
@@ -49,6 +60,112 @@ header {
     font-weight: 700;
     font-size: 10px;
     text-align: center;
-    letter-spacing: 1.5px;
-    line-height: 5ex;
+    letter-spacing: 1.6px;
+    line-height: 4ex;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    padding-top: 48px;
+    /*В Figma прописано 52px, 
+    PerfectPixel даёт только 48px. Где-то потеряно 4 px*/
+    padding-left: 104px;
+    grid-column: content-start/content-end;
+    /*grid-row: nav-start/main-start;*/
+    justify-self: stretch;
+}
+
+.selected-nav {
+    /*Класс для ссылки активной страницы*/
+    padding: 0px 0px 14px 0px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.link-extra-margin {
+    /*Класс с доп. полями для одного из эл-тов меню*/
+    margin-left: 22px;
+}
+
+nav a {
+    margin: 0px 12px;
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+article {
+    height: 510px;
+    grid-column: content-start/content-end;
+
+    /*Прописываю сетку внутри article*/
+    display: grid;
+    grid-template-rows: [article-start] 160px [surname-start] 40px [headerline] 130px [article-content] 180px;
+
+    grid-template-columns: 7.5fr [art-cont1] 83fr [art-cont2] 9.5fr;
+
+}
+
+article img {
+    grid-column: 1/-1;
+    grid-row: 1/article-content;
+    max-width: 800px;
+    max-height: 330px;
+    margin-right: 14px;
+    float: left;
+}
+
+article .surn {
+    grid-column: art-cont1/art-cont2;
+    grid-row: surname-start/headerine;
+
+    font-size: 18px;
+    line-height: 19px;
+
+}
+
+article .date {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+
+
+.topic {
+    padding-top: 20px;
+    width: 70%;
+    grid-column: art-cont1/art-cont2;
+    grid-row: headerline;
+
+    font-size: 28px;
+    line-height: 34px;
+    /*line-height: 19px;*/
+    font-weight: 400;
+}
+
+article .paper {
+    grid-row: article-content/-1;
+    grid-column: 1/-1;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    padding-bottom: 35px;
+}
+
+article .describe {
+    grid-row: article-content/-1;
+    grid-column: art-cont1/art-cont2;
+    height: 100px;
+    padding: 36px 0px 0px 0px;
+}
+
+.describe a {
+    display: block;
+    font-size: 17px;
+    line-height: 30px;
 }
