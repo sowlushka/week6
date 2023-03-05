@@ -238,7 +238,7 @@ a.btn:visited {
 .part2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 125px 83px 404px 176px;
+    grid-template-rows: 125px 83px 404px 176px 166px;
     justify-content: center;
     gap: 20px;
     color: #333333
@@ -339,7 +339,19 @@ a.btn:visited {
     color: #333333;
 }
 
-.want-read a {
+.part2 a {
     color: #8D4FDB;
     text-decoration: none;
+}
+
+footer {
+    grid-column: 1/-1;
+    grid-row: -2;
+    background-color: black;
+    color: #8B8B8B;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    padding-top: 55px;
+    /*align-self: center;*/
 }
