@@ -9,7 +9,7 @@
     через transform-origin или через margin: auto 
     для узких экранов работает плохо*/
     --iframe-width: 960px;
-    --figma-width: 1300px;
+    --figma-width: 1440px;
     /*Масштаб iframe*/
     --scale: 0.6;
     --figma-scale: 0.35;
@@ -91,7 +91,7 @@ a:active {
 .figma iframe {
     border: 1px solid rgb(128, 111, 89);
     width: var(--figma-width);
-    height: 1445px;
+    height: 1200px;
     transform: scale(var(--figma-scale));
     transform-origin: 0 0;
     margin-left: calc(50% - var(--figma-width) / 2 * var(--figma-scale));
