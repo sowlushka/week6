@@ -138,24 +138,61 @@
             <div class="slogan-part2">
                 Did you read our personal favorites?
             </div>
-            <div id="pre-art1" class="pre-art">
+            <div id="pre-art1" class="pre-art"><!--Этот блок заполняю скриптом, так как данные у нас уже есть.-->
 
             </div>
+
+            <!--Оставшиеся блоки предпросмотра подгружаются с других страниц или из БД бэкенда.
+            Код не прописываю.-->
+            <div id="pre-art2" class="pre-art">
+                <img src="./resources/art-img4.jpg" alt="article4">
+                <div class="surn">
+                    <img src="./resources/surn2.jpg" alt="Jessica Simpson">
+                    Jessica Simpson
+                    <div class="date">Jun 12, 2016</div>
+                </div>
+                <div class="topic">
+                    We found the most butiful place for our party november
+                </div>
+
+            </div>
+
+            <div id="pre-art3" class="pre-art">
+                <img src="./resources/art-img5.jpg" alt="article5">
+                <div class="surn">
+                    <img src="./resources/surn2.jpg" alt="Luke Cage">
+                    Luke Cage
+                    <div class="date">Jun 12, 2016</div>
+                </div>
+                <div class="topic">
+                    We found the most butiful place for our party november
+                </div>
+
+            </div>
+            <div class="want-read">
+                Want to read all of our stories?
+                <a href="#full">Read the full blog</a>
+            </div>
+
         </div>
     </div>
 
     <script>
-
-        let el1 = document.querySelector('#art1').firstElementChild;
-        /*let text = parent.firstElementChild.innerHTML;*/
-        let el2 = el1.outerHTML;
-        for (i = 0; i < 3; ++i) {
-            el1 = el1.nextElementSibling;
-            el2 += el1.outerHTML;
+        function Loader(artID, preArtID) {
+            //Подгружаю часть селекторов из article
+            //в блок предпросмотра
+            let el1 = document.querySelector(artID).firstElementChild;
+            let el2 = el1.outerHTML;
+            //Нужно только 3 селектора
+            for (i = 0; i < 3; ++i) {
+                el1 = el1.nextElementSibling;
+                el2 += el1.outerHTML;
+            }
+            //Заполнение предпросмотра селекторами
+            document.getElementById(preArtID).innerHTML = el2;
         }
 
-        /*el2 = '<div class="js">' + el2 + '</div/>';*/
-        document.getElementById("pre-art1").innerHTML = el2;
+        Loader('#art1', 'pre-art1');
     </script>
 
 </body>

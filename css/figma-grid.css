@@ -230,13 +230,14 @@ a.btn:visited {
     background-color: #8438d0;
 }
 
-.part2 * {
-    border: 1px solid red;
-}
+/*-------------------------------------------------------------------------
+второая страница
+-------------------------------------------------------------------------*/
+
 
 .part2 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1fr, 300px));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 125px 83px 404px 176px;
     justify-content: center;
     gap: 20px;
@@ -253,21 +254,43 @@ a.btn:visited {
 }
 
 .slogan-part2 {
+    grid-row: 2;
+    grid-column: 1/-1;
     font-size: 23px;
     line-height: 33px;
-    align-self: start;
+    align-self: center;
+    text-align: center;
     color: #A9AFB3;
     font-family: 'Lato', sans-serif;
 }
 
+.pre-art * {
+    border: 1px solid red;
+}
+
 
 #pre-art1 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+#pre-art2 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#pre-art3 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.pre-art {
     width: 300px;
-    height: 190px;
+    height: 269px;
     color: #FFFFFF;
     display: grid;
-    grid-template-columns: 24px 35px 8px 233px;
-    grid-template-rows: 131px 35px 24px 40px;
+    grid-template-columns: 24px 1fr;
+    grid-template-rows: 131px 35px 24px 79px;
 
 }
 
@@ -277,21 +300,46 @@ a.btn:visited {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
+    float: left;
+    padding-right: 8px;
 }
 
 .pre-art .surn {
     grid-row: 2;
     grid-column: 2;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.pre-art .date {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.pre-art .topic {
+    grid-row: -2/-1;
+    grid-column: 1/-1;
+    color: black;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .pre-art a {
     display: none;
 }
 
-/*
-.js {
+.part2 .want-read {
+    grid-row: 4/5;
     grid-column: 1/-1;
-    /*grid-row: -2;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
     color: #333333;
+}
 
-}*/
+.want-read a {
+    color: #8D4FDB;
+    text-decoration: none;
+}
