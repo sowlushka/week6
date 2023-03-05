@@ -1,0 +1,147 @@
+/*body * {
+    border: 1px solid blue;
+}*/
+
+:root {
+    /*Ширина фрейма. Константа необходима для выравнивания фрейма
+    по центру при изменении ширины экрана.
+    Классическое выравнивание после transform: scale 
+    через transform-origin или через margin: auto 
+    для узких экранов работает плохо*/
+    --iframe-width: 960px;
+    --figma-width: 1300px;
+    /*Масштаб iframe*/
+    --scale: 0.6;
+    --figma-scale: 0.35;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background-color: rgb(243, 242, 241);
+
+    color: rgb(2, 2, 87);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+header {
+    padding: 10px;
+    background: linear-gradient(180deg, rgb(228, 234, 226), rgb(241, 242, 243));
+}
+
+
+h1 {
+    text-align: center;
+    color: darkblue;
+    margin: 10px;
+    font-size: 50px;
+}
+
+
+a {
+    display: inline-block;
+    background-color: rgb(247, 239, 229);
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 15px;
+    color: darkgreen;
+    text-decoration: none;
+}
+
+a:visited {
+    background-color: antiquewhite;
+    color: olivedrab;
+}
+
+a:active {
+
+    background-color: rgb(252, 243, 232);
+}
+
+
+/*По умолчанию все блоки невидимы*/
+.game-preview,
+.grid-site,
+.figma {
+    display: none;
+}
+
+
+.game-preview img {
+    max-width: 100%;
+    max-height: 45vh;
+}
+
+
+.grid-site {
+    border: 1px solid rgb(128, 111, 89);
+    width: var(--iframe-width);
+    height: 720px;
+    transform: scale(var(--scale));
+    transform-origin: 0 0;
+    margin-left: calc(50% - var(--iframe-width) / 2 * var(--scale));
+    overflow: hidden;
+}
+
+.figma iframe {
+    border: 1px solid rgb(128, 111, 89);
+    width: var(--figma-width);
+    height: 1445px;
+    transform: scale(var(--figma-scale));
+    transform-origin: 0 0;
+    margin-left: calc(50% - var(--figma-width) / 2 * var(--figma-scale));
+    overflow: hidden;
+}
+
+
+
+.game:hover~.game-preview,
+.gridsite_link:hover~iframe,
+.figma_link:hover~.figma {
+    display: block;
+}
+
+
+main {
+    min-height: 50vh;
+    padding: 5px;
+    margin: 5px;
+    flex-grow: 1;
+}
+
+footer {
+    padding: 10px;
+}
+
+footer::first-letter {
+    color: rosybrown;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+
+/*---------------------------------------------------------
+Доп. стили для froggy.html
+-----------------------------------------------------------*/
+figure {
+    margin-top: 5px;
+}
+
+figure img {
+    width: 100%;
+}
+
+
+
+.usual_link {
+    border: none;
+    background-color: rgb(243, 242, 241) !important;
+    text-decoration: underline;
+    padding: 0px;
+    margin: 0px;
+}
