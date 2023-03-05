@@ -294,12 +294,18 @@ a.btn:visited {
 
 }
 
-.pre-art img {
+
+.pre-art>img {
+    /*Стиль для изображение, на который распространяется grid-разметка*/
     grid-column: 1/-1;
     grid-row: 1/-2;
     max-width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.surn img {
+    /*Стиль общий для всех картинок в блоке pre-art*/
     float: left;
     padding-right: 8px;
 }
