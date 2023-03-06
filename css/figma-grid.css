@@ -264,11 +264,6 @@ a.btn:visited {
     font-family: 'Lato', sans-serif;
 }
 
-.pre-art * {
-    border: 1px solid red;
-}
-
-
 #pre-art1 {
     grid-column: 1/2;
     grid-row: 3/4;
@@ -291,6 +286,7 @@ a.btn:visited {
     display: grid;
     grid-template-columns: 24px 1fr;
     grid-template-rows: 131px 35px 24px 79px;
+    justify-self: center;
 
 }
 
@@ -329,6 +325,7 @@ a.btn:visited {
     color: black;
     font-size: 18px;
     line-height: 28px;
+    width: 100%;
 }
 
 .pre-art a {
