@@ -1,11 +1,14 @@
 /*Шрифты*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;700&display=swap');
 
-/*.desktop * {
+/*
+body {
     border: 1px blue solid;
 }*/
+
 .desktop {
     max-width: 1440px;
+    min-width: 2px;
     margin: auto;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -26,7 +29,7 @@
     background-size: cover;
     color: #FFFFFF;
 
-    justify-content: stretch;
+    justify-content: center;
     justify-items: center;
     padding-bottom: 99px;
 
@@ -42,7 +45,7 @@
 
 
 header {
-    grid-column: content-start/content-end;
+    grid-column: body-start/body-end;
     align-self: end;
 }
 
@@ -67,22 +70,13 @@ header {
 
 nav {
     padding-top: 48px;
-    /*В Figma прописано 52px, 
-    PerfectPixel даёт только 48px. Где-то потеряно 4 px*/
-    padding-left: 104px;
-    grid-column: content-start/content-end;
-    justify-self: stretch;
+    grid-column: body-start/body-end;
 }
 
 .selected-nav {
     /*Класс для ссылки активной страницы*/
     padding: 0px 0px 14px 0px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.link-extra-margin {
-    /*Класс с доп. полями для одного из эл-тов меню*/
-    margin-left: 22px;
 }
 
 nav a {
@@ -96,27 +90,33 @@ nav a {
 
 
 article {
-    height: 510px;
+    min-height: 510px;
     grid-column: content-start/content-end;
 
     /*Прописываю сетку внутри article*/
     display: grid;
-    grid-template-rows: [article-start] 160px [surname-start] 40px [headerline] 130px [article-content] 180px;
+    grid-template-rows: [article-start] 4fr [surname-start] 1fr [headerline] 3fr [article-content] 5fr;
 
-    grid-template-columns: 7.5fr [art-cont1] 82fr [art-cont2] 9.5fr;
+    grid-template-columns: 7fr [art-cont1] 80fr [art-cont2] 7fr;
 
+}
+
+article .surn img {
+    /*стили для картинки заголовка*/
+    object-fit: cover;
+    margin-right: 14px;
+    float: left;
 }
 
 article>img {
-    /*стили для картинки заголовка*/
-    max-width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/article-content;
+    width: 100%;
     height: 100%;
+
 }
 
 article img {
-
-    grid-column: 1/-1;
-    grid-row: 1/article-content;
     object-fit: cover;
     margin-right: 14px;
     float: left;
@@ -240,7 +240,7 @@ a.btn:visited {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 125px 83px 404px 176px 166px;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
     color: #333333
 }
 
@@ -280,8 +280,8 @@ a.btn:visited {
 }
 
 .pre-art {
-    width: 300px;
-    height: 269px;
+    max-width: 300px;
+    height: 270px;
     color: #FFFFFF;
     display: grid;
     grid-template-columns: 24px 1fr;
@@ -300,7 +300,7 @@ a.btn:visited {
     object-fit: cover;
 }
 
-.surn img {
+.pre-art .surn img {
     /*Стиль общий для всех картинок в блоке pre-art*/
     float: left;
     padding-right: 8px;
