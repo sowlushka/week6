@@ -28,7 +28,39 @@
                     </div>
                 </div>
             </header>
-            <nav>
+            <!--Меню для маленьких экранов-->
+
+            <nav class="sd" role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox" id="hambMenu" />
+                    <label for="hambMenu">MENU</label>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <a href="#HOME">
+                            <li>HOME</li>
+                        </a>
+                        <a href="#BLOG">
+                            <li>BLOG</li>
+                        </a>
+                        <a href="#CATEGORIES">
+                            <li>CATEGORIES</li>
+                        </a>
+                        <a href="#PICK">
+                            <li>PICK</li>
+                        </a>
+                        <a href="#ABOUT">
+                            <li>ABOUT US</li>
+                        </a>
+                        <a href="#CONTACT">
+                            <li>CONTACT</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+            <nav class="md">
                 <a href="#HOME" class="selected-nav">HOME</a>
                 <a href="#BLOG">BLOG</a>
                 <a href="#CATEGORIES">CATEGORIES</a>
@@ -36,6 +68,7 @@
                 <a href="#ABOUT">ABOUT US</a>
                 <a href="#CONTACT">CONTACT US</a>
             </nav>
+
 
             <article id="art1">
                 <img src="./resources/art-img1.png" alt="article1">
@@ -144,7 +177,7 @@
 
             <!--Оставшиеся блоки предпросмотра подгружаются с других страниц или из БД бэкенда.
             Код не прописываю.-->
-            <div id="pre-art2" class="pre-art">
+            <div id="pre-art2" class="pre-art md">
                 <img src="./resources/art-img4.jpg" alt="article4">
                 <div class="surn">
                     <img src="./resources/surn2.jpg" alt="Jessica Simpson">
@@ -157,7 +190,7 @@
 
             </div>
 
-            <div id="pre-art3" class="pre-art">
+            <div id="pre-art3" class="pre-art ld">
                 <img src="./resources/art-img5.jpg" alt="article5">
                 <div class="surn">
                     <img src="./resources/surn2.jpg" alt="Luke Cage">
