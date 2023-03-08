@@ -96,12 +96,12 @@ article {
     display: grid;
     grid-template-rows: [article-start] 3fr [surname-start] 1fr [headerline] 3fr [article-content] 5fr;
 
-    grid-template-columns: 7fr [art-cont1] 80fr [art-cont2] 7fr;
+    grid-template-columns: 7fr [art-cont] 80fr 95px 7fr;
 
 }
 
 article .surn img {
-    /*стили для картинки заголовка*/
+    /*стили для картинки фото-автора*/
     object-fit: cover;
     margin-right: 14px;
     float: left;
@@ -117,13 +117,12 @@ article>img {
 }
 
 article .surn {
-    grid-column: art-cont1/art-cont2;
+    grid-column: art-cont/-2;
     grid-row: surname-start/headerine;
 
     font-size: 18px;
     line-height: 19px;
     margin-right: 14px;
-    float: left;
 }
 
 article .date {
@@ -135,7 +134,7 @@ article .date {
 .topic {
     padding-top: 20px;
     width: 80%;
-    grid-column: art-cont1/art-cont2;
+    grid-column: art-cont/-2;
     grid-row: headerline;
     font-size: 28px;
     line-height: 34px;
@@ -155,12 +154,13 @@ article .paper {
 
 article .text {
     grid-row: article-content/-1;
-    grid-column: art-cont1/art-cont2;
+    grid-column: art-cont/-2;
     min-height: 100px;
     padding: 36px 0px 0px 0px;
 }
 
 article a {
+    /*Стиль ссылки под блоком текста*/
     display: block;
     padding-top: 2px;
     font-size: 17px;
@@ -168,11 +168,12 @@ article a {
 }
 
 article .btn {
-    grid-column: -2;
+    /*Стиль ссылки-кнопки внутри картинки*/
+    grid-column: 3/4;
     grid-row: article-start;
     height: 25px;
     padding: 0px 10px;
-    margin: 20px 20px 0px 0px;
+    margin-top: 20px;
     text-decoration: none;
     font-size: 8px;
     line-height: 24px;
@@ -181,6 +182,7 @@ article .btn {
     border-radius: 10px;
     letter-spacing: 1px;
     text-align: center;
+    justify-self: end;
 
 }
 
