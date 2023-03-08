@@ -90,12 +90,11 @@ nav a {
 
 
 article {
-    min-height: 510px;
     grid-column: content-start/content-end;
 
     /*Прописываю сетку внутри article*/
     display: grid;
-    grid-template-rows: [article-start] 4fr [surname-start] 1fr [headerline] 3fr [article-content] 5fr;
+    grid-template-rows: [article-start] 3fr [surname-start] 1fr [headerline] 3fr [article-content] 5fr;
 
     grid-template-columns: 7fr [art-cont1] 80fr [art-cont2] 7fr;
 
