@@ -413,7 +413,8 @@ footer {
     }
 
     .sd {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
 
@@ -430,12 +431,16 @@ footer {
 
     /*---------------------------------------------------
     Стили для работы меню-бургера
+    За основу взят пример отсюда: 
+    https://codepen.io/erikterwan/pen/EVzeRP
     -----------------------------------------------------*/
+    label {
+        padding-left: 5px;
+        color: #E0E0E0;
+    }
+
     #menuToggle {
         display: block;
-        /* position: relative;
-        top: 50px;
-        left: 50px;*/
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
@@ -443,7 +448,7 @@ footer {
 
     #menuToggle a {
         text-decoration: none;
-        color: #232323;
+        color: #E0E0E0;
         transition: color 0.3s ease;
     }
 
@@ -453,12 +458,11 @@ footer {
 
 
     #menuToggle input {
+        /*Стиль чекбокса в открытом меню*/
         display: block;
         width: 40px;
         height: 32px;
         position: absolute;
-        top: -7px;
-        left: -5px;
         cursor: pointer;
         opacity: 0;
         /* hide this */
@@ -469,13 +473,16 @@ footer {
     }
 
     #menuToggle span {
+        /*Стиль для горизонтальной линии
+        в картинке для закрытого меню*/
         display: block;
         width: 33px;
         height: 4px;
         margin-bottom: 5px;
+        margin-left: 5px;
         position: relative;
 
-        background: #cdcdcd;
+        background: #E0E0E0;
         border-radius: 3px;
 
         z-index: 1;
@@ -498,7 +505,7 @@ footer {
     #menuToggle input:checked~span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
+        background: #E0E0E0;
     }
 
     #menuToggle input:checked~span:nth-last-child(3) {
@@ -511,13 +518,16 @@ footer {
     }
 
     #menu {
+        /*Стиль для раскрытого меню*/
         position: absolute;
-        width: 300px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-
-        background: #ededed;
+        width: 100px;
+        margin: -50px 0 0 -50px;
+        padding: 50px 5px 0px 50px;
+        padding-top: 50px;
+        background-color: rgba(96, 96, 96, 0.95);
+        /*VS-code подсказал
+         прикольный стиль смешивания из трёх букв*/
+        background-blend-mode: hue;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         /* to stop flickering of text in safari */
@@ -530,10 +540,18 @@ footer {
 
     #menu li {
         padding: 10px 0;
-        font-size: 22px;
+        font-size: 11px;
+
+    }
+
+    #menuToggle ul {
+        display: flex;
+        flex-direction: column;
+
     }
 
     #menuToggle input:checked~ul {
         transform: none;
+
     }
 }
