@@ -459,6 +459,17 @@ footer {
         display: block;
     }
 
+    footer {
+        flex-direction: column;
+        height: auto;
+        line-height: 16px;
+        padding: 0px;
+    }
+
+    footer p {
+        margin: 5px;
+        padding: 5px;
+    }
 
     /*---------------------------------------------------
     Стили для работы меню-бургера
