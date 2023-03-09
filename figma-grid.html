@@ -73,7 +73,7 @@
 
             <article id="art1">
                 <img src="./resources/art-img1.png" alt="article1">
-                <a href="#travel" class="btn">TRAVEL</a>
+
                 <div class="surn">
                     <img src="./resources/surn1.jpg" alt="Luke Cage">
                     Luke Cage
@@ -82,7 +82,7 @@
                 <div class="topic">
                     The 10 most beautiful places you should visit in your life
                 </div>
-
+                <a href="#travel" class="btn">TRAVEL</a>
                 <!--Без пустого div корректно наложить стили
             друг на друга не получается.
             -->
@@ -113,7 +113,8 @@
                 <div class="topic">
                     Perfect gear to take with you if you go on a photography trip
                 </div>
-
+                <!--Ниже пустая ссылка для стандартной структуры блока при обработке через js -->
+                <a href="#travel" class="btn" style="display:none;"></a>
                 <div class="paper">
 
                 </div>
@@ -133,7 +134,7 @@
 
             <article>
                 <img src="./resources/art-img3.jpg" alt="article3">
-                <a href="#photography" class="btn">PHOTOGRAPHY</a>
+
                 <div class="surn">
                     <img src="./resources/surn1.jpg" alt="Luke Cage">
                     Luke Cage
@@ -142,7 +143,7 @@
                 <div class="topic">
                     Perfect gear to take with you if you go on a photography trip
                 </div>
-
+                <a href="#photography" class="btn">PHOTOGRAPHY</a>
                 <div class="paper">
 
                 </div>
@@ -172,7 +173,10 @@
             <div class="slogan-part2">
                 Did you read our personal favorites?
             </div>
-            <div id="pre-art1" class="pre-art"><!--Этот блок заполняю скриптом, так как данные у нас уже есть.-->
+
+
+            <!--Этот блок заполняю скриптом, так как данные у нас уже есть.-->
+            <div id="pre-art1" class="pre-art">
 
             </div>
 
@@ -201,7 +205,6 @@
                 <div class="topic">
                     We found the most butiful place for our party november
                 </div>
-
             </div>
             <div class="want-read">
                 Want to read all of our stories?
@@ -223,21 +226,23 @@
     </div>
 
     <script>
-        function Loader(artID, preArtID) {
+        function Loader(sourceID, recipientID) {
             //Подгружаю часть селекторов из article
             //в блок предпросмотра
-            let el1 = document.querySelector(artID).firstElementChild;
+            let el1 = document.querySelector(sourceID).firstElementChild;
             let el2 = el1.outerHTML;
             //Нужно только 3 селектора
-            for (i = 0; i < 3; ++i) {
+            for (i = 0; i < 2; ++i) {
                 el1 = el1.nextElementSibling;
                 el2 += el1.outerHTML;
             }
             //Заполнение предпросмотра селекторами
-            document.getElementById(preArtID).innerHTML = el2;
+            document.getElementById(recipientID).innerHTML = el2;
         }
 
         Loader('#art1', 'pre-art1');
+       /* Loader('#pre-art2', 'small1');
+                Loader('#pre-art3', 'small2');*/
     </script>
 
 </body>

@@ -294,7 +294,7 @@ a.btn:visited {
     /*Стиль для изображение, на который распространяется grid-разметка*/
     grid-column: 1/-1;
     grid-row: 1/-2;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -418,10 +418,18 @@ footer {
     }
 
 
-    .part1,
-    .part2 {
+    .part1 {
         display: block;
     }
+
+
+    .part2 {
+        display: grid;
+        grid-template-columns: 5px 1fr 5px;
+        grid-template-rows: 125px 83px 320px 50px 166px;
+    }
+
+
 
     header {
         text-align: center;
@@ -446,16 +454,116 @@ footer {
     .h-part2 {
         font-size: 28px;
         line-height: 34px;
+        margin: 0px auto 20px auto;
     }
 
     .pre-art {
-        margin: 0px auto 0px auto;
+        /*justify-self: end;*/
         grid-template-rows: 131px 35px 24px 50px;
     }
+
+    /*Для организации анимации смены кадров
+    располагаем все кадры в одной ячейке*/
+    #pre-art1,
+    #pre-art2,
+    #pre-art3 {
+        display: grid;
+        max-width: 300%;
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    /*Прописываем смену кадров через анимацию*/
+    #pre-art1 {
+        animation: 30s infinite slide1;
+    }
+
+    #pre-art2 {
+        animation: 30s infinite slide2;
+    }
+
+    #pre-art3 {
+        animation: 30s infinite slide3;
+    }
+
+    /*Ниже три keyframe с хронометражом
+    для синхронизации смены кадров*/
+    @keyframes slide1 {
+        from {
+            opacity: 100%;
+        }
+
+        26% {
+            opacity: 100%;
+        }
+
+        34% {
+            opacity: 0%;
+        }
+
+        92% {
+            opacity: 0%;
+        }
+
+        to {
+            opacity: 100%;
+        }
+    }
+
+    @keyframes slide2 {
+        from {
+            opacity: 0%;
+        }
+
+        26% {
+            opacity: 0%;
+        }
+
+        34% {
+            opacity: 100%;
+        }
+
+        60% {
+            opacity: 100%;
+        }
+
+        68% {
+            opacity: 0%;
+        }
+
+        to {
+            opacity: 0%;
+        }
+    }
+
+    @keyframes slide3 {
+        from {
+            opacity: 0%;
+        }
+
+        60% {
+            opacity: 0%;
+        }
+
+        68% {
+            opacity: 100%;
+        }
+
+        92% {
+            opacity: 100%;
+        }
+
+        to {
+            opacity: 0%;
+        }
+    }
+
+
 
     .pre-art .topic {
         line-height: 20px;
         padding: 5px;
+
     }
 
     .want-read a {
