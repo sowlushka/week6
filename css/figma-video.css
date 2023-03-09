@@ -108,6 +108,7 @@ a:active {
 
 
 main {
+    border: 1px solid red;
     min-height: 50vh;
     padding: 5px;
     margin: 5px;
@@ -128,14 +129,10 @@ footer::first-letter {
 /*---------------------------------------------------------
 Доп. стили для froggy.html
 -----------------------------------------------------------*/
-figure {
-    margin-top: 5px;
+object {
+    width: 480px;
+    height: 320px;
 }
-
-figure img {
-    width: 100%;
-}
-
 
 
 .usual_link {
