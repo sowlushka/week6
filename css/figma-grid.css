@@ -475,15 +475,15 @@ footer {
 
     /*Прописываем смену кадров через анимацию*/
     #pre-art1 {
-        animation: 30s infinite slide1;
+        animation: 15s infinite slide1;
     }
 
     #pre-art2 {
-        animation: 30s infinite slide2;
+        animation: 15s infinite slide2;
     }
 
     #pre-art3 {
-        animation: 30s infinite slide3;
+        animation: 15s infinite slide3;
     }
 
     /*Ниже три keyframe с хронометражом
