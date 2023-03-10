@@ -11,7 +11,7 @@
     --iframe-width: 960px;
     --figma-width: 1440px;
     /*Масштаб iframe*/
-    --scale: 0.6;
+    --scale: 0.4;
     --figma-scale: 0.35;
 }
 
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     background-color: rgb(243, 242, 241);
 
     color: rgb(2, 2, 87);
@@ -81,7 +81,7 @@ a:active {
 .grid-site {
     border: 1px solid rgb(128, 111, 89);
     width: var(--iframe-width);
-    height: 720px;
+    height: 640px;
     transform: scale(var(--scale));
     transform-origin: 0 0;
     margin-left: calc(50% - var(--iframe-width) / 2 * var(--scale));
@@ -108,14 +108,16 @@ a:active {
 
 
 main {
-    min-height: 50vh;
+    max-height: 70vh;
     padding: 5px;
     margin: 5px;
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
 footer {
     padding: 10px;
+
 }
 
 footer::first-letter {
@@ -126,22 +128,22 @@ footer::first-letter {
 
 
 /*---------------------------------------------------------
-Доп. стили для froggy.html
+Доп. стили для figma-video.html
 -----------------------------------------------------------*/
-figure {
+/*figure {
     margin-top: 5px;
 }
 
 figure img {
     width: 100%;
 }
+*/
 
-
-
+/*
 .usual_link {
     border: none;
     background-color: rgb(243, 242, 241) !important;
     text-decoration: underline;
     padding: 0px;
     margin: 0px;
-}
+}*/

@@ -357,7 +357,7 @@ footer {
     padding-top: 55px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 980px) {
     .ld {
         /*Для больших .ld отображает контент
         меньше - прячет*/
